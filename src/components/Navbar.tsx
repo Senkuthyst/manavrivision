@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Compass, BookOpen, MessageCircle, Users, Map } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -70,8 +71,9 @@ export function Navbar() {
             })}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden lg:block">
+          {/* CTA Button & Theme Toggle */}
+          <div className="hidden lg:flex items-center gap-2">
+            <ThemeToggle variant={isHome ? "home" : "default"} />
             <Button
               variant={isHome ? "hero" : "default"}
               size="lg"
@@ -81,16 +83,19 @@ export function Navbar() {
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className={cn(
-              "lg:hidden p-2 rounded-lg transition-colors",
-              isHome ? "text-card hover:bg-card/10" : "text-foreground hover:bg-muted"
-            )}
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Mobile Menu Button & Theme Toggle */}
+          <div className="lg:hidden flex items-center gap-1">
+            <ThemeToggle variant={isHome ? "home" : "default"} />
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className={cn(
+                "p-2 rounded-lg transition-colors",
+                isHome ? "text-card hover:bg-card/10" : "text-foreground hover:bg-muted"
+              )}
+            >
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </nav>
 
