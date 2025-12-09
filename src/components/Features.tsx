@@ -3,7 +3,7 @@ import {
   Globe, 
   MessageCircle, 
   GraduationCap, 
-  Camera,
+  Glasses,
   Users,
   Sparkles
 } from "lucide-react";
@@ -28,9 +28,9 @@ const features = [
     color: "bg-success/10 text-success",
   },
   {
-    icon: Camera,
-    title: "AR Experience",
-    description: "Overlay cultural facts and interactive guides on real-world views using your camera.",
+    icon: Glasses,
+    title: "VR Experience",
+    description: "Immerse yourself in fully interactive virtual reality walkthroughs with educational overlays and hotspot navigation.",
     color: "bg-accent/10 text-accent",
   },
   {
@@ -65,7 +65,7 @@ export function Features() {
             More Than Just Tourism
           </h2>
           <p className="text-muted-foreground text-lg">
-            TravelLens combines cutting-edge technology with rich educational content 
+            TravelLens combines cutting-edge VR technology with rich educational content 
             to create an unforgettable virtual journey.
           </p>
         </motion.div>

@@ -23,6 +23,7 @@ export interface Destination {
   category: "heritage" | "nature" | "adventure" | "spiritual";
   languages: { phrase: string; meaning: string; pronunciation: string }[];
   quickFacts: { label: string; value: string }[];
+  coordinates: { lat: number; lng: number };
 }
 
 export const destinations: Destination[] = [
@@ -65,7 +66,8 @@ export const destinations: Destination[] = [
       { label: "Language", value: "Nepali" },
       { label: "UNESCO Sites", value: "7" },
       { label: "Founded", value: "723 AD" }
-    ]
+    ],
+    coordinates: { lat: 27.7172, lng: 85.3240 }
   },
   {
     id: "pokhara",
@@ -106,7 +108,8 @@ export const destinations: Destination[] = [
       { label: "Lakes", value: "9" },
       { label: "Climate", value: "Subtropical" },
       { label: "Best For", value: "Adventure" }
-    ]
+    ],
+    coordinates: { lat: 28.2096, lng: 83.9856 }
   },
   {
     id: "lumbini",
@@ -147,7 +150,8 @@ export const destinations: Destination[] = [
       { label: "Area", value: "5 sq km" },
       { label: "Monasteries", value: "25+" },
       { label: "Significance", value: "Buddha's Birthplace" }
-    ]
+    ],
+    coordinates: { lat: 27.4833, lng: 83.2767 }
   },
   {
     id: "chitwan",
@@ -188,7 +192,8 @@ export const destinations: Destination[] = [
       { label: "Rhino Population", value: "600+" },
       { label: "Bird Species", value: "500+" },
       { label: "UNESCO Status", value: "Since 1984" }
-    ]
+    ],
+    coordinates: { lat: 27.5291, lng: 84.3542 }
   },
   {
     id: "swayambhu",
@@ -229,7 +234,8 @@ export const destinations: Destination[] = [
       { label: "Steps", value: "365" },
       { label: "Height", value: "77m above valley" },
       { label: "Also Called", value: "Monkey Temple" }
-    ]
+    ],
+    coordinates: { lat: 27.7149, lng: 85.2903 }
   },
   {
     id: "bhaktapur",
@@ -270,7 +276,8 @@ export const destinations: Destination[] = [
       { label: "Area", value: "7 sq km" },
       { label: "Famous For", value: "Pottery & Crafts" },
       { label: "UNESCO Status", value: "Since 1979" }
-    ]
+    ],
+    coordinates: { lat: 27.6712, lng: 85.4298 }
   },
   {
     id: "patan",
@@ -311,7 +318,8 @@ export const destinations: Destination[] = [
       { label: "Founded", value: "299 AD" },
       { label: "Famous For", value: "Metalwork" },
       { label: "UNESCO Status", value: "Since 1979" }
-    ]
+    ],
+    coordinates: { lat: 27.6766, lng: 85.3206 }
   },
   {
     id: "bandipur",
@@ -352,7 +360,8 @@ export const destinations: Destination[] = [
       { label: "Best Feature", value: "Himalayan Views" },
       { label: "Specialty", value: "Organic Coffee" },
       { label: "Type", value: "Heritage Village" }
-    ]
+    ],
+    coordinates: { lat: 27.9359, lng: 84.4089 }
   },
   {
     id: "annapurna",
@@ -393,7 +402,8 @@ export const destinations: Destination[] = [
       { label: "ABC Trek", value: "10-14 days" },
       { label: "Circuit Trek", value: "15-21 days" },
       { label: "Permit", value: "ACAP + TIMS" }
-    ]
+    ],
+    coordinates: { lat: 28.5960, lng: 83.8203 }
   }
 ];
 

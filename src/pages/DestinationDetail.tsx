@@ -10,8 +10,9 @@ import {
   Languages,
   Info,
   ChevronRight,
-  Eye,
-  Bookmark
+  Glasses,
+  Bookmark,
+  ExternalLink
 } from "lucide-react";
 import { getDestinationById } from "@/data/destinations";
 import { Button } from "@/components/ui/button";
@@ -100,10 +101,20 @@ export default function DestinationDetail() {
               </div>
             </div>
 
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-4">
               <Button variant="hero" size="lg">
-                <Eye className="w-5 h-5" />
-                Start 360° Tour
+                <Glasses className="w-5 h-5" />
+                Explore in VR
+              </Button>
+              <Button variant="heroOutline" size="lg" asChild>
+                <a 
+                  href={`https://maps.google.com/?q=${destination.coordinates.lat},${destination.coordinates.lng}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <ExternalLink className="w-5 h-5" />
+                  View on Map
+                </a>
               </Button>
               <Button variant="heroOutline" size="lg">
                 <Bookmark className="w-5 h-5" />
