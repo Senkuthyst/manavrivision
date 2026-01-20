@@ -1,73 +1,173 @@
-# Welcome to your Lovable project
+🌍 TravelLens — Explore. Learn. Experience.
+Turn tourism into learning. Turn learning into journeys.
 
-## Project info
+TravelLens is an immersive tourism + education intelligence platform that helps users explore destinations virtually, understand local culture, prove cultural readiness, and plan ethical travel.
+It focuses on solving real problems in tourism such as cultural misunderstanding, unsafe travel, shallow learning, and lack of access for students — starting with Nepal as the pilot region.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+🚀 Vision
+TravelLens transforms tourism into an educational, ethical, and immersive experience by combining:
 
-## How can I edit this code?
+Virtual exploration
 
-There are several ways of editing your application.
+AI cultural guidance
 
-**Use Lovable**
+Smart travel planning
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+Local economic empowerment
 
-Changes made via Lovable will be committed automatically to this repo.
+Responsible tourism principles
 
-**Use your preferred IDE**
+This is not a booking website.
+This is a travel‑education intelligence platform.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+🔄 Core User Flow
+Explore → Learn → Prove → Unlock → Plan → Go
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Explore a destination virtually (360° / VR-style experience)
 
-Follow these steps:
+Learn from an AI Local Guide (history, culture, do’s & don’ts)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Complete short quizzes and learning tasks
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Unlock deeper content + Smart Travel Plan
 
-# Step 3: Install the necessary dependencies.
-npm i
+Receive ethical accommodation & transport guidance
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+Prepare for real-world travel responsibly
 
-**Edit a file directly in GitHub**
+🧩 Key Features
+🌐 1. Immersive Destination Experience
+360° / VR-style visual walkthroughs
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Interactive hotspots
 
-**Use GitHub Codespaces**
+Time-of-day & festival views
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Crowd awareness indicator
 
-## What technologies are used for this project?
+Reality vs Instagram comparison
 
-This project is built with:
+Cultural Risk Alerts (temple behavior, clothing rules, photography restrictions, caste & religious sensitivity)
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+🤖 2. AI Local Guide
+Persona-based AI (monk, elder, local guide) that explains:
 
-## How can I deploy this project?
+History & traditions
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+Cultural norms
 
-## Can I connect a custom domain to my Lovable project?
+Do’s & Don’ts
 
-Yes, you can!
+Safety measures before visiting
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+“Before you judge” cultural context
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Real-time language translation for local phrases
+
+📚 3. Learning & Earned Unlocks (Freemium Core)
+Smart quizzes tailored for travel readiness
+
+Cultural & safety awareness checks
+
+Unlock deeper exploration only after learning
+
+Travel Readiness Score
+
+Knowledge Passport stamps & certificates
+
+🏨 4. Smart Travel Plan
+Unlocked only after learning:
+
+Best season to visit
+
+Ethical accommodation suggestions
+
+Homestays & hotels with price breakdowns
+
+Food, room & local service costs
+
+Eco-friendly transport routes
+
+Local buses & sustainable travel
+
+Community impact explanations
+
+📸 5. Social Travel Feed
+Upload travel moments
+
+View others’ journeys
+
+Like, comment & share
+
+Automatic TravelLens watermark on shared content
+
+🎓 6. Teacher / School Mode
+Bridging education and tourism:
+
+Curriculum-aligned virtual exploration
+
+Lesson plans
+
+Auto-generated assignments
+
+Downloadable learning reports
+
+Student participation certificates
+
+🛕 7. Cultural Preservation Mode
+Highlights endangered rituals, festivals & crafts
+
+Explains how respectful tourism preserves culture
+
+Positions platform for government & NGO partnerships
+
+🧾 8. Knowledge Passport Dashboard
+Destinations explored
+
+Quizzes completed
+
+Readiness scores
+
+Cultural stamps earned
+
+Downloadable certificates
+
+♿ 9. Accessibility & Inclusion
+Text-first mode
+
+Audio-first mode
+
+Slow exploration mode
+
+Inclusive tourism experience
+
+💎 10. Premium Subscription
+All features unlocked
+
+Keeps earned-learning model central
+
+Supports platform sustainability
+
+🧠 Business Model
+Freemium: Free core learning & exploration
+
+Premium: Full VR, AI guide, smart planning
+
+Institutional Subscriptions: Schools & universities
+
+Future Partnerships: Tourism boards, NGOs, local businesses
+
+Scalability: Expand beyond Nepal globally
+
+🛠️ Tech Stack
+Frontend: Next.js (App Router), React
+
+Styling: Tailwind CSS
+
+Deployment: Vercel
+
+AI Integration: Claude / OpenAI (planned)
+
+Data Models: Modular, AI-ready architecture
+
+SEO: Performance-optimized & search-ready
