@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Glasses, Play, Rotate3D, MapPin, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { VRModal } from "@/components/VRModal";
 import heroImage from "@/assets/hero-nepal.jpg";
+import kathmanduImage from "@/assets/kathmandu.jpg";
 
 const vrFeatures = [
   {
@@ -23,6 +26,8 @@ const vrFeatures = [
 ];
 
 export function VRExperience() {
+  const [isVROpen, setIsVROpen] = useState(false);
+
   return (
     <section className="py-20 lg:py-32 bg-gradient-to-b from-background to-muted/30 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -77,16 +82,14 @@ export function VRExperience() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button variant="default" size="lg" asChild>
-                <Link to="/explore" className="flex items-center gap-2">
-                  <Glasses className="w-5 h-5" />
-                  Explore in VR
-                </Link>
+              <Button variant="default" size="lg" onClick={() => setIsVROpen(true)}>
+                <Glasses className="w-5 h-5" />
+                Try VR Demo
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <Link to="/learn" className="flex items-center gap-2">
+                <Link to="/explore" className="flex items-center gap-2">
                   <Play className="w-5 h-5" />
-                  Watch Demo
+                  Browse All Tours
                 </Link>
               </Button>
             </div>
@@ -119,6 +122,7 @@ export function VRExperience() {
                   <motion.button
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
+                    onClick={() => setIsVROpen(true)}
                     className="w-20 h-20 rounded-full gradient-gold shadow-glow flex items-center justify-center mb-4 mx-auto"
                   >
                     <Play className="w-8 h-8 text-primary-foreground ml-1" />
@@ -181,6 +185,15 @@ export function VRExperience() {
           </motion.div>
         </div>
       </div>
+
+      {/* VR Modal */}
+      <VRModal
+        isOpen={isVROpen}
+        onClose={() => setIsVROpen(false)}
+        destinationId="kathmandu"
+        destinationName="Kathmandu Valley"
+        imageUrl={kathmanduImage}
+      />
     </section>
   );
 }

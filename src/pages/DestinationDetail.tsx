@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { useParams, Link } from "react-router-dom";
 import { 
@@ -19,6 +20,7 @@ import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { AIGuide } from "@/components/AIGuide";
+import { VRModal } from "@/components/VRModal";
 import { cn } from "@/lib/utils";
 
 const categoryColors = {
@@ -31,6 +33,7 @@ const categoryColors = {
 export default function DestinationDetail() {
   const { id } = useParams<{ id: string }>();
   const destination = getDestinationById(id || "");
+  const [isVROpen, setIsVROpen] = useState(false);
 
   if (!destination) {
     return (
@@ -102,7 +105,7 @@ export default function DestinationDetail() {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <Button variant="hero" size="lg">
+              <Button variant="hero" size="lg" onClick={() => setIsVROpen(true)}>
                 <Glasses className="w-5 h-5" />
                 Explore in VR
               </Button>
@@ -258,6 +261,15 @@ export default function DestinationDetail() {
 
       <Footer />
       <AIGuide />
+      
+      {/* VR Modal */}
+      <VRModal
+        isOpen={isVROpen}
+        onClose={() => setIsVROpen(false)}
+        destinationId={destination.id}
+        destinationName={destination.name}
+        imageUrl={destination.image}
+      />
     </div>
   );
 }
