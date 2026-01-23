@@ -34,7 +34,7 @@ export function Navbar() {
               <img 
                 src="/logo.png" 
                 alt="TravelLens Logo" 
-                className="w-8 h-8 object-contain"
+                className="w-10 h-10 lg:w-12 lg:h-12 object-contain"
               />
               <div className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-secondary animate-pulse" />
             </div>
