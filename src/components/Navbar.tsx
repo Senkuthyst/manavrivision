@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Compass, BookOpen, MessageCircle, Users, Map, Shield, Award, Sparkles } from "lucide-react";
+import { Menu, X, Compass, BookOpen, MessageCircle, Users, Shield, Award, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { cn } from "@/lib/utils";
@@ -31,10 +31,11 @@ export function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
             <div className="relative">
-              <Map className={cn(
-                "w-8 h-8 transition-colors",
-                isHome ? "text-card" : "text-primary"
-              )} />
+              <img 
+                src="/logo.png" 
+                alt="TravelLens Logo" 
+                className="w-10 h-10 lg:w-12 lg:h-12 object-contain"
+              />
               <div className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-secondary animate-pulse" />
             </div>
             <span className={cn(
