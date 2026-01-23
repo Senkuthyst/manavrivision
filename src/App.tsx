@@ -11,6 +11,8 @@ import Learn from "./pages/Learn";
 import Guide from "./pages/Guide";
 import Community from "./pages/Community";
 import Safety from "./pages/Safety";
+import Premium from "./pages/Premium";
+import Passport from "./pages/Passport";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +32,8 @@ const App = () => (
             <Route path="/guide" element={<Guide />} />
             <Route path="/community" element={<Community />} />
             <Route path="/safety" element={<Safety />} />
+            <Route path="/premium" element={<Premium />} />
+            <Route path="/passport" element={<Passport />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

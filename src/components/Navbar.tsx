@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Compass, BookOpen, MessageCircle, Users, Map, Shield } from "lucide-react";
+import { Menu, X, Compass, BookOpen, MessageCircle, Users, Map, Shield, Award, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { cn } from "@/lib/utils";
@@ -10,8 +10,8 @@ const navLinks = [
   { name: "Explore", href: "/explore", icon: Compass },
   { name: "Learn", href: "/learn", icon: BookOpen },
   { name: "Safety", href: "/safety", icon: Shield },
-  { name: "AI Guide", href: "/guide", icon: MessageCircle },
-  { name: "Community", href: "/community", icon: Users },
+  { name: "Passport", href: "/passport", icon: Award },
+  { name: "Premium", href: "/premium", icon: Sparkles },
 ];
 
 export function Navbar() {

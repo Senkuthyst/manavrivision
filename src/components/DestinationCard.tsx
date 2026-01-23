@@ -1,13 +1,15 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { MapPin, Clock, ArrowRight } from "lucide-react";
+import { MapPin, Clock, ArrowRight, Leaf, Users, Landmark, TrendingUp } from "lucide-react";
 import type { Destination } from "@/data/destinations";
 import { cn } from "@/lib/utils";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
 interface DestinationCardProps {
   destination: Destination;
   index: number;
   featured?: boolean;
+  showSustainability?: boolean;
 }
 
 const categoryColors = {
@@ -17,7 +19,30 @@ const categoryColors = {
   spiritual: "bg-primary/10 text-primary border-primary/30",
 };
 
-export function DestinationCard({ destination, index, featured = false }: DestinationCardProps) {
+// Simulated sustainability scores per destination
+const sustainabilityScores: Record<string, { community: number; environment: number; culture: number; economy: number }> = {
+  kathmandu: { community: 85, environment: 70, culture: 95, economy: 80 },
+  pokhara: { community: 80, environment: 85, culture: 85, economy: 75 },
+  lumbini: { community: 90, environment: 80, culture: 100, economy: 85 },
+  chitwan: { community: 75, environment: 90, culture: 80, economy: 70 },
+  swayambhu: { community: 85, environment: 75, culture: 95, economy: 80 },
+  bhaktapur: { community: 90, environment: 70, culture: 100, economy: 85 },
+  patan: { community: 88, environment: 72, culture: 95, economy: 82 },
+  bandipur: { community: 95, environment: 88, culture: 90, economy: 90 },
+  annapurna: { community: 70, environment: 95, culture: 85, economy: 75 },
+};
+
+const sustainabilityConfig = {
+  community: { icon: Users, label: "Community", color: "text-primary" },
+  environment: { icon: Leaf, label: "Eco", color: "text-success" },
+  culture: { icon: Landmark, label: "Culture", color: "text-secondary" },
+  economy: { icon: TrendingUp, label: "Local Economy", color: "text-accent" },
+};
+
+export function DestinationCard({ destination, index, featured = false, showSustainability = true }: DestinationCardProps) {
+  const scores = sustainabilityScores[destination.id] || { community: 80, environment: 80, culture: 80, economy: 80 };
+  const avgScore = Math.round((scores.community + scores.environment + scores.culture + scores.economy) / 4);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -89,6 +114,37 @@ export function DestinationCard({ destination, index, featured = false }: Destin
               <span className="font-medium text-foreground">{destination.altitude}</span>
             </div>
           </div>
+
+          {/* Sustainability Indicator */}
+          {showSustainability && (
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <div className="flex items-center gap-1.5 px-2 py-1 rounded-full bg-success/10 border border-success/30">
+                  <Leaf className="w-3 h-3 text-success" />
+                  <span className="text-xs font-medium text-success">{avgScore}%</span>
+                </div>
+              </TooltipTrigger>
+              <TooltipContent side="top" className="p-3">
+                <p className="font-semibold mb-2">Sustainability Score</p>
+                <div className="space-y-1 text-xs">
+                  {Object.entries(scores).map(([key, value]) => {
+                    const config = sustainabilityConfig[key as keyof typeof sustainabilityConfig];
+                    const Icon = config.icon;
+                    return (
+                      <div key={key} className="flex items-center justify-between gap-4">
+                        <span className="flex items-center gap-1">
+                          <Icon className={cn("w-3 h-3", config.color)} />
+                          {config.label}
+                        </span>
+                        <span className="font-medium">{value}%</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </TooltipContent>
+            </Tooltip>
+          )}
+
           <div className="flex items-center gap-2 text-primary font-medium text-sm group-hover:gap-3 transition-all">
             <span>Explore</span>
             <ArrowRight className="w-4 h-4" />
