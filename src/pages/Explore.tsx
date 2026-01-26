@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Search, Filter, MapPin, Grid, List } from "lucide-react";
+import { Search, Filter, MapPin, Grid, List, Users, MessageCircle } from "lucide-react";
 import { destinations, type Destination } from "@/data/destinations";
 import { DestinationCard } from "@/components/DestinationCard";
 import { Navbar } from "@/components/Navbar";
@@ -44,9 +44,24 @@ export default function Explore() {
             <h1 className="text-3xl lg:text-5xl font-display font-bold text-foreground mb-4">
               Explore All Destinations
             </h1>
-            <p className="text-muted-foreground text-lg">
+            <p className="text-muted-foreground text-lg mb-6">
               Discover Nepal's most incredible places through immersive virtual tours
             </p>
+            
+            {/* Connect to Local Guide Button */}
+            <Button 
+              variant="gold" 
+              size="lg" 
+              className="gap-2"
+              onClick={() => {
+                // TODO: Open local guide connection modal
+                alert("Connect to Local Guide feature coming soon! Our verified local guides will help you experience Nepal authentically.");
+              }}
+            >
+              <Users className="w-5 h-5" />
+              Connect to Local Guide
+              <MessageCircle className="w-4 h-4" />
+            </Button>
           </motion.div>
 
           {/* Search & Filters */}
